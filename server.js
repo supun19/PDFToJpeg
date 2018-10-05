@@ -6,9 +6,10 @@ const app = express()
 const port = 3000
 
 app.get('/', function(req, res) {
-    var url = "http://www.pdf995.com/samples/pdf.pdf";
+    //var url = "http://www.africau.edu/images/default/sample.pdf"; // working url
+    var url = "http://www.pdf995.com/samples/pdf.pdf"; //not working url
     pdfConvertImageAndSaveDb(url)
-    res.send('Hello World!')
+    res.send('can you see the terminal')
 
 });
 function NodeCanvasFactory() {}
