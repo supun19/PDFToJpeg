@@ -6,7 +6,8 @@ const app = express()
 const port = 3000
 
 app.get('/', function(req, res) {
-    pdfConvertImageAndSaveDb()
+    var url = "http://www.pdf995.com/samples/pdf.pdf";
+    pdfConvertImageAndSaveDb(url)
     res.send('Hello World!')
 
 });
@@ -40,9 +41,9 @@ NodeCanvasFactory.prototype = {
         canvasAndContext.context = null;
     },
 };
-function pdfConvertImageAndSaveDb(){
+function pdfConvertImageAndSaveDb(url){
 
-    pdfjsLib.getDocument("http://www.pdf995.com/samples/pdf.pdf").then(function (pdfDocument) {
+    pdfjsLib.getDocument(url).then(function (pdfDocument) {
         console.log('# number of pages.',pdfDocument.pdfInfo.numPages);
 
         pdfDocument.getPage(1).then(function (page) {
